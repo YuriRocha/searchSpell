@@ -1,0 +1,45 @@
+.containerResults{
+	border: 1px solid #4C3C1B;
+	padding: 8px 80px 8px 8px;
+	text-align: center;
+}
+
+.results{
+	margin:auto;
+}
+
+body{
+	background-color: #F5F5F5;
+}
+
+#myform, #titleSpell{
+	text-align: center;
+}
+
+#boxForm{
+	width: 80%;
+	margin-left: 10%
+
+}
+
+.navbar-brand{
+	font-family: 'Shojumaru', cursive;
+}
+
+#description-page{
+	font-family: 'Shojumaru', cursive;
+}
+
+
+
+#info-text{
+	font-family: 'Shojumaru', cursive;
+	text-align: center;
+	margin-top: 20%;
+}
+
+.aboutText{
+	margin-left: 4%;
+}
+
+
