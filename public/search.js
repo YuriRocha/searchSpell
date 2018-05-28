@@ -21,17 +21,21 @@ function searchController($scope, $http){
 			var jsonObj = x2js.xml_str2json(xmlText);
 			//console.log(jsonObj.query.results.GoodreadsResponse.search.results);
 			var arrResult = jsonObj.query.results.GoodreadsResponse.search.results;
-			console.log(arrResult.work.forEach(function(obj){
-				var amazon = obj.best_book.title.split(' ').join('+')
-				var bookdepository = obj.best_book.title.split(' ').join('+')
+			arrResult.work.forEach(function(obj){
+				var searched_book = obj.best_book.title.split(' ').join('+')
 				$('#searchResult').append('<div class="containerResults">' + '<img class="results" src='+obj.best_book.image_url +'></img>' +
 				 '<p>Author: '+obj.best_book.author.name+'</p>' + '<p>Book: '+obj.best_book.title+'</p>'+
 				 	'<p><a target="_blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords='+
-				 	amazon+'">Amazon</a></p>' +
+				 	searched_book+'">Amazon</a></p>' +
+				 	'<p><a target="_blank" href="https://www.amazon.com.br/s?k='+searched_book+'&ref=nb_sb_noss">Amazon BR</a></p>' +
 				 	'<p><a target="_blank" href="https://www.bookdepository.com/search?searchTerm='+
-				 	bookdepository+'">Book Depository</a></p></div>'
+				 	searched_book+'">Book Depository</a></p>'+
+				 	'<p><a target="_blank" href="https://busca.saraiva.com.br/busca?q='+searched_book+'">Saraiva</a></p>'+
+				 	'<p><a target="_blank" href="https://www.estantevirtual.com.br/busca?utf8=%E2%9C%93&type=q&new=&q='+searched_book+'">Estante Virtual</a></p>'+
+				 	'<p><a target="_blank" href="https://www.kobo.com/br/pt/search?Query='+
+				 	searched_book+'">Kobo</a></p></div>'
 				 	)
-			}));
+			});
     	}
 	);
 	}	
